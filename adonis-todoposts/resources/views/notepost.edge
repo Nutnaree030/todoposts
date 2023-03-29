@@ -1,0 +1,30 @@
+@layout('layouts/master')
+
+@set('title','Notes in '+tdpnotes.title)
+
+@section('body')
+
+        <h1 class="ui header">{{tdpnotes.title}}</h1>
+        <hr>
+        <h3 class="ui header">Notes ( {{tdpnotes.notes.length}} )</h3>
+        
+        <ul>
+        @each(notes in tdpnotes.notes)
+                <li>
+                    <span>
+                        {{notes.note}}
+                        &emsp;
+                        <a class="ui mini yellow button" href="{{ route('notes.edit',{tdpid: tdpnotes.id,nid: notes.id}) }}">Edit</a>
+                        &nbsp;
+                        <a class="ui mini black button" href="{{ route('notes.delete',{tdpid: tdpnotes.id,nid: notes.id})  }}">Delete</a>
+                    </span>
+                </li><br>
+        @endeach
+        </ul>
+        
+        @include('partials/noteform')
+
+        <br><br><a class="ui primary button" href="{{ route('todoposts.index') }}"> Back </a>
+    </div>
+
+@endsection

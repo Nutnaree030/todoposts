@@ -1,0 +1,33 @@
+@if(editnote)
+<form class="ui form" action="{{ route('notes.update',{tdpid: tdpid,nid: editnote.id}) }}" method="post">
+@else
+<form class="ui form" action="{{ route('notes.store',{tdpid: tdpid}) }}" method="post">
+@endif
+
+
+        <div class="field">
+            <p>
+            @if(editnote)
+                <label>To Editing Note:</label>
+            @else
+                <label>New Note:</label>
+            @endif
+            
+            <div class="six wide field">
+                @if(editnote)
+                <input name="noteform" placeholder="Editing note" value="{{editnote.note}}" size="500">
+                @else
+                <input name="noteform" placeholder="New note" size="500">
+                @endif
+            </div>
+            <div class="one field">
+                @if(editnote)
+                <input class="ui grey button" type="submit" value="Update">
+                @else
+                <input class="ui green button" type="submit" value="Add">
+                @endif
+            </div>
+            </p>
+        </div>
+
+</form>

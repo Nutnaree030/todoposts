@@ -1,0 +1,40 @@
+@layout('layouts/master')
+
+@set('title','To-Do-Posts')
+
+@section('body')
+    <h1 class="ui header">ToDo App</h1>
+    
+    @include('partials/todoform')
+    <div class="ui segments">
+    
+    <!-- change false to expression that you want to test -->
+    @if(todoposts)
+        @each(tdpost in todoposts)
+          <div class="ui segment">
+            <a class="ui mini yellow button" href="{{ route('todoposts.edit',{id: tdpost.id}) }}">Edit</a>
+            <a class="ui mini teal button" href="{{ route('todoposts.completed',{id: tdpost.id})  }}">Completed</a>
+            <a class="ui mini black button" href="{{ route('todoposts.delete',{id: tdpost.id})  }}">Delete</a>
+
+            <!-- change false to expression that you want to test -->
+            @if(tdpost.status == 'completed')
+
+             <!-- change INT690 Midterm Exam to the variable for display the variable value  -->
+             <span class="completed">{{ tdpost.title }}</span>
+            @else
+
+              <!-- change INT690 Midterm Exam to the variable for display the variable value  -->
+              {{ tdpost.title }}
+            @endif
+
+            <a class="ui mini button" href="{{ route('notes.index',{tdpid: tdpost.id})  }}">
+                {{ tdpost.$extras.notesCount }} note
+            </a>
+        </div>
+        @endeach
+        
+    @else
+        <div class="ui segment">No any Todo</div>
+    @endif
+    </div>
+@endsection 
