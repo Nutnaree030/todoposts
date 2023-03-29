@@ -1,13 +1,19 @@
 # todoposts
 Created by Ms.Nutnaree Sookhong 
 
+<br/>
+
 ## About's todoposts
 This todoposts is a simply and basically web be managed by AdonisJS and TypeScript. The main idea is to add, view, edit, and delete todo posts including complete it with a strikethrough and design its note freely. However, this project is in my subject on field of Information Technology, INT511 Full atack Web development, and still be in the process.
 
 <br/>
 
 ## Overview
-<!-- ![image](https://drive.google.com/file/d/1BQ-OI7Ok7_q_sUTCoJbsRfVrXUbz2MTU/view?usp=share_link) ![image](https://drive.google.com/file/d/1_3iLUp4YFstPFkuq81EKkco3jKGkUT4y/view?usp=share_link) -->
+<br/>
+
+![home_todoposts](https://user-images.githubusercontent.com/69097689/228609654-24037c77-f531-4851-ba91-88d6fa91fcb9.jpg)
+![detail_todoposts](https://user-images.githubusercontent.com/69097689/228609769-fbdcf2e8-a7df-48f1-8fc8-d4021a03f7eb.jpg)
+
 <br/>
 
 ### Functions<hr/>
@@ -33,7 +39,6 @@ This todoposts is a simply and basically web be managed by AdonisJS and TypeScri
 npm install
 ``
 <br/>
-
 ``
 npm i @adonisjs/lucid
 ``
